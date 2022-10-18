@@ -1,62 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cripto Mercado</title>
     <!-- CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
 </head>
+
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown link
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">BTC</a></li>
-                  <li><a class="dropdown-item" href="#">XPR</a></li>
-                  <li><a class="dropdown-item" href="#">LTC</a></li>
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-coins"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <div class="input-group">
+                        <label for="" class="input-group-text">Monedas</label>
+                        <select class="form-select" name="" id="tablaCrip">
+                            <option value="bitcoin">BTC</option>
+                            <option value="ethereum">ETH</option>
+                            <option value="xpr">XPR</option>
+                            <option value="BCH">BCH</option>
+                            <option value="ltc">LTC</option>
+                        </select>
+                    </div>
                 </ul>
-              </li>
-            </ul>
-          </div>
+            </div>
         </div>
-      </nav>
+    </nav>
     <!-- fin navbar -->
+    <div>
+        <!-- Barra Informacion -->
+        <div>
+            <div class="container-fluid">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <p class="nav-link" id="price">Prices: <span class="text-secondary">precio</span></p>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link" id="L24H">24Hrs High: <span class="text-secondary">High</span></p>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link" id="L24L">24Hrs Low: <span class="text-secondary">Low</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Fin Barra Informacion -->
+        <!-- Filtros -->
+        <div class=" container text-center">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center pb-1 mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <div class="input-group">
+                                <label for="" class="input-group-text">Intervalo</label>
+                                <select class="form-select" name="" id="tablaInter">
+                                    <option value="d1">1 Día</option>
+                                    <option value="m1">1 Min</option>
+                                    <option value="dia30">30 Días</option>
+                                    <option value="dia60">60 Días</option>
+                                    <option value="dia90">90 Días</option>
+                                    <option value="dia180">180 Días</option>
+                                    <option value="dia356">1 Año</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center pb-1 mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <div class="input-group">
+                                <label for="" class="input-group-text">N° de Datos</label>
+                                <select class="form-select" name="" id="tablaInter2">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="30">30</option>
+                                    <option value="60">60</option>
+                                    <option value="90">90</option>
+                                    <option value="180">180</option>
+                                    <option value="356">356</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="w-100 clearfix d-md-none" />
+    <!-- Fin Filtros -->
+
     <!-- Graficos -->
-<div class="m-5 shadow-sm">
-    <h1 class="text-secondary text-center">Graficos Mercado</h1>
-    <canvas style="height:40vh; width:80vw" id="cripto"></canvas>
-</div>
+    <div class="m-5 shadow-sm">
+        <h1 class="text-secondary text-center">Graficos Mercado</h1>
+        <canvas style="height:40vh; width:80vw" id="cripto"></canvas>
+    </div>
     <!-- Fin Graficos -->
     <!-- Footer -->
-    <footer>
-        
-    </footer>
+    +
+
+    <section>
+        <footer class="d-flex flex-wrap justify-content-between align-items-center border-top bg-light">
+            <div class="d-flex align-items-center mx-3 mt-3 p-4">
+                <h4 class="fw-bolder">Market Cat$</h4>
+            </div>
+            <div class="mx-3 mt-3">
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex px-2">
+                    <!-- twitter -->
+                    <li class="ms-3"><a class="m-1 colortw" href="https://twitter.com" role="button" target="_blank"><i
+                                class="fab fa-twitter fa-lg"></i></a></li>
+                    <!-- instagran -->
+                    <li class="ms-3"><a class="m-1 colorig" href="https://www.instagram.com" role="button"
+                            target="_blank"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
+                    <!-- Github -->
+                    <li class="ms-3"><a class="m-1 colorgit" href="https://github.com/garaos/proyecto3" role="button"
+                            target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                    <li class="ms-3"><a class="m-1 colorgit" href="https://github.com/PatBra/proyecto3" role="button"
+                            target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </section>
     <!-- Fin Footer -->
     <!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-<script src="./asset/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://kit.fontawesome.com/0abb840f04.js" crossorigin="anonymous"></script>
+    <!-- <script src="./asset/js/main.js"></script> -->
+    <script type="module" src="./asset/js/main.js"></script>
 </body>
+
 </html>
