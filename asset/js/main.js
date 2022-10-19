@@ -1,38 +1,37 @@
 import obtdata from './obtData.js';
-// import actdata from './ActData.js';
+import actdata from './ActData.js';
 
 let pricesArray = [];
 let datesArray = [];
 let myChart;
 
 
-document.querySelector("#tablaCrip").addEventListener("click", graficar);
-// document.querySelector("#tablaInter").addEventListener("click", graficar)
+
+if (pricesArray == 0) {
+    graficar();
+}
+
+document.querySelector("#tablaCrip").addEventListener("change", graficar);
+document.querySelector("#tablaInter").addEventListener("change", graficar);
+document.querySelector("#tablaInter2").addEventListener("change", graficar);
 
 function graficar() {
-    console.log("grafica");
+ 
     graphCrip()
+    tablaInfo()
 }
 
 async function graphCrip() {
-    console.log("entra");
     let datos = await obtdata()
-    console.log("obtdata");
-    console.log("hola"+ datos);
     if (datos) {
         let crip = datos.data;
         let frecuencia = document.getElementById("tablaInter2").value;
-        console.log(frecuencia);
         let b = crip.reverse();
         let a = b.slice(0, frecuencia);
         let c = a.reverse();
-        console.log(a);
-        console.log(c);
+  
         pricesArray = c.map((datos) => datos.priceUsd);
         datesArray = c.map((datos) => datos.date.split('T')[0]);
-
-        console.log(pricesArray);
-        console.log(datesArray);
 
         let titulo = document.getElementById("tablaCrip").value;
         // Grafico
@@ -65,4 +64,22 @@ async function graphCrip() {
         
         // Fin grafico
     }
+}
+
+async function tablaInfo(){
+    let tablita = await actdata();
+if (tablita) {
+   let panel = tablita.data;
+
+   document.getElementById("currenPrice").innerHTML= panel.priceUsd
+   document.getElementById("variation").innerHTML= panel.changePercent24Hr
+   if (panel.changePercent24Hr < 0) {
+    document.getElementById("variation").style.color = "red"
+   }else{
+    document.getElementById("variation").style.color = "green"
+   }
+  
+   document.getElementById("vwap").innerHTML= panel.vwap24Hr
+}
+ 
 }
