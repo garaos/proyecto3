@@ -49,6 +49,7 @@ async function graphCrip() {
                     data: pricesArray,
                     fill: false,
                     borderColor: 'rgb(255, 0, 220)',
+                    fill: true,
                     tension: 0.1
                 }]
             },
