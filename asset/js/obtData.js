@@ -1,14 +1,16 @@
+// import axios from './axios'
+
 async function obtdata() {
     let coin = document.getElementById("tablaCrip").value
     let inter = document.getElementById("tablaInter").value
     const url = `https://api.coincap.io/v2/assets/${coin}/history?interval=${inter}`
 
-
-    // const url = "https://api.coincap.io/v2/assets/bitcoin/history?interval=d1"
+console.log(url);
 
     try {
         let listaCoin = await axios.get(url)
         listaCoin = listaCoin.data
+        console.log("oli");
         return listaCoin
     }catch(err){
         return false
