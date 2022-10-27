@@ -10,9 +10,7 @@ let myChart;
 
 
 
-if (!pricesArray.length) {
-    graficar();
-}
+if (!pricesArray.length) graficar();
 
 document.querySelector("#tablaCrip").addEventListener("change", graficar);
 document.querySelector("#tablaInter").addEventListener("change", graficar);
