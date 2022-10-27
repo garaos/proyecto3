@@ -10,7 +10,7 @@ let myChart;
 
 
 
-if (pricesArray == 0) {
+if (!pricesArray.length) {
     graficar();
 }
 
