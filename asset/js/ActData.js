@@ -11,5 +11,4 @@ async function actData() {
     return false;
   }
 }
-
 export default actData;
