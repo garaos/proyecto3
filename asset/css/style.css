@@ -1,13 +1,46 @@
+*{
+    font-family: 'Barlow', sans-serif;
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
+
 .graph {
     max-height:40vh;
-    width:80vw;
+    width:90vw;
 }
 
 h1 {
     font-size: 3vW;
+}
+
+
+/* CSS footer */
+
+.colorfb {
+    color: #3b5998;
+}
+
+.colortw {
+    color: #4a78f6;
+}
+
+.colorig {
+    color: #ac2bac;
+}
+
+/*Footer efectos hover*/
+.colorfb:hover {
+    color: #0065fd;
+}
+
+.colortw:hover {
+    color: #4aa9f6;
+}
+
+.colorig:hover {
+    color: #ed38ed;
 }

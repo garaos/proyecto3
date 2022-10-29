@@ -5,16 +5,13 @@ fetch("https://api.coincap.io/v2/assets/")
   .then((datos) => {
     datos.data
       .sort((a, b) => b.priceUsd - a.priceUsd)
-      .slice(0, 20)
+      .slice(0, 10)
       .forEach((moneda) => {
-        //	datos.data.forEach( moneda => {
 
-        //console.log(moneda)// esto esta OK muestra todo
+        const {name, priceUsd } = moneda;
 
-        const { id, name, symbol, priceUsd } = moneda;
-
-        orig.innerHTML += `
-		<span>..::${symbol} - ${Number(priceUsd).toFixed(2)}::..</span>
-		`;
+        orig.innerHTML += `<span>..:: </span><span class="prbnr">${name}</span><span class="prclr"> $${Number(priceUsd).toFixed(2)}</span><span> ::..</span>`;
       });
   });
+
+
