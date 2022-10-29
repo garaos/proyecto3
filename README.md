@@ -53,6 +53,8 @@ fetch("https://api.coincap.io/v2/assets/")
 
 [Axios](https://axios-http.com/)
 
+*Se deja trabajando por medio de los CDN tanto para Chart JS, como para Axios*
+
 ## Uso
 
 Todos los datos mostrados serán utilizados solo con fines academicos.
