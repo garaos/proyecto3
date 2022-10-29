@@ -1,20 +1,36 @@
 #marq {
-    margin: 1em auto; 
-    width: 102em; height: 1.5em; 
-    border: inset; 
-    overflow: hidden; 
-    white-space: nowrap; 
-    background-color: #E5F2E2; 
-    font: bold 150%/1.5 serif; 
-    }
-    #orig {
-    display: inline-block; 
-    transform: translatex(0); 
-    animation: marquesina 10s infinite normal linear 1s; 
-    }
-    
-    @keyframes marquesina {
-      0% {transform: translatex(0); }
-      100% {transform: translatex(-50%); }
-    }
-    
+  /* margin: 1em auto; */
+  width:90vw;
+  height: 1.5em;
+  border: 1px solid #000;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #e5f2e27a;
+  /* font: bold 150%/1.5 serif; */
+}
+
+#orig {
+  display: inline-block;
+  transform: translatex(0);
+  animation: marquesina 15s infinite normal linear 1s;
+}
+
+.prbnr {
+  color:#02760b;
+  font-weight: bold;
+}
+
+.prclr {
+  color: rgb(97, 95, 95);
+  font-weight: bold;
+}
+
+@keyframes marquesina {
+  0% {
+    transform: translatex(0);
+  }
+
+  100% {
+    transform: translatex(-50%);
+  }
+}

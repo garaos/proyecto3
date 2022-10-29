@@ -9,10 +9,6 @@ let myChart;
 
 if (!pricesArray.length) graficar();
 
-// document.querySelector("#tablaCrip").addEventListener("change", graficar);
-// document.querySelector("#tablaInter").addEventListener("change", graficar);
-// document.querySelector("#tablaInter2").addEventListener("change", graficar);
-
 ["#tablaCrip", "#tablaInter", "#tablaInter2"].forEach((el) => {
   document.querySelector(el).addEventListener("change", graficar);
 });
@@ -27,10 +23,6 @@ async function graphCrip() {
   if (datos) {
     let crip = datos.data;
     let frecuencia = document.getElementById("tablaInter2").value;
-    // let b = crip.reverse();
-    // let a = b.slice(0, frecuencia);
-    // let c = a.reverse();
-
     let b = crip.reverse().slice(0, frecuencia).reverse();
 
     pricesArray = b.map((datos) => datos.priceUsd);
@@ -77,14 +69,14 @@ async function tablaInfo() {
   if (tablita) {
     let panel = tablita.data;
 
-    document.getElementById("currenPrice").innerHTML = panel.priceUsd;
-    document.getElementById("variation").innerHTML = panel.changePercent24Hr;
+    document.getElementById("currenPrice").innerHTML =`USD $ ${Number(panel.priceUsd).toFixed(2)}`;
+    document.getElementById("variation").innerHTML = `${Number(panel.changePercent24Hr).toFixed(2)}%`;
     if (panel.changePercent24Hr < 0) {
       document.getElementById("variation").style.color = "red";
     } else {
       document.getElementById("variation").style.color = "green";
     }
 
-    document.getElementById("vwap").innerHTML = panel.vwap24Hr;
+    document.getElementById("vwap").innerHTML =`USD $ ${Number(panel.vwap24Hr).toFixed(2)}`;
   }
 }
