@@ -1,7 +1,7 @@
 ![alt text](./asset/img/coin_money_icon-icons.com_51091.png)
 # Proyecto 3 Dashboard
 
-Este es una pequeña muestra de lo que se puede hacer por medio de Chart.js, el funcionamientos se puede visualizar en [Página](https://)
+Este es una pequeña muestra de lo que se puede hacer por medio de Chart.js, el funcionamientos se puede visualizar en [Página](https://garaos.github.io/proyecto3/)
 
 ## API
 
@@ -44,4 +44,8 @@ const url = `https://api.coincap.io/v2/assets/${coin}`
 Todos los datos mostrados serán utilizados solo con fines academicos.
 
 
+## integrantes
+
+- Patricio Hugo Bravo Gallardo
+- Luis Gonzalo Araos Vilches
 
