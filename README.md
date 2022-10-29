@@ -9,7 +9,7 @@ Para la ejecucion se esta consumiento la API "CoinCAP API 2.0", la documentacion
 
 ## Datos
 
-La API para el proyecto se utilizaron dos solicitudes
+La API para el proyecto se utilizaron tres solicitudes
 
 ```bash
 const url = `https://api.coincap.io/v2/assets/${coin}/history?interval=${inter}`
@@ -32,6 +32,20 @@ const url = `https://api.coincap.io/v2/assets/${coin}`
     }catch(err){
         return false
     }
+```
+```bash
+fetch("https://api.coincap.io/v2/assets/")
+  .then((res) => res.json())
+  .then((datos) => {
+    datos.data
+      .sort((a, b) => b.priceUsd - a.priceUsd)
+      .slice(0, 10)
+      .forEach((moneda) => {
+        const {name, priceUsd } = moneda;
+        orig.innerHTML += `<span>..:: </span><span class="prbnr">${name}</span><span class="prclr"> $${Number(priceUsd).toFixed(2)}</span><span> ::..</span>`;
+      });
+  });
+
 ```
 ## Librerias
 
