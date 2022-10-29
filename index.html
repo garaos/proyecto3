@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./asset/css/banner.css">
 
 </head>
 
@@ -60,31 +61,12 @@
                 </ul>
             </div>
         </div>
-    </nav>
-    <!-- fin navbar -->
-    <div>
-        <!-- Barra Informacion -->
-        <div>
-            <div class="container-fluid">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <p class="nav-link" id="price">Prices: <span class="text-secondary"
-                                id="currenPrice">precio</span></p>
-                    </li>
-                    <li class="nav-item">
-                        <p class="nav-link" id="L24H">Variación 24Hrs: <span id="variation">variacion</span></p>
-                    </li>
-                    <li class="nav-item">
-                        <p class="nav-link" id="L24L">VWAP 24Hrs: <span class="text-secondary" id="vwap">vwap</span></p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- Fin Barra Informacion -->
-        <!-- Filtros -->
-        <!-- <div class=" container text-center">
+
+
+
+        <div class=" container text-right">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center pb-1 mb-3">
+                <div class="col-12 col-md-6 col-lg-5 d-flex justify-content-center pb-1 mb-3">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <div class="input-group">
@@ -104,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center pb-1 mb-3">
+                <div class="col-12 col-md-6 col-lg-5 d-flex justify-content-center pb-1 mb-3">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <div class="input-group">
@@ -125,7 +107,33 @@
             </div>
         </div>
     </div>
-    <hr class="w-100 clearfix d-md-none" /> -->
+
+
+
+    </nav>
+    <!-- fin navbar -->
+    <div>
+        <!--  Barra Informacion -->
+        <div>
+            <div class="container-fluid">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <p class="nav-link" id="price">Prices: <span class="text-secondary"
+                                id="currenPrice">precio</span></p>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link" id="L24H">Variación 24Hrs: <span id="variation">variacion</span></p>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link" id="L24L">VWAP 24Hrs: <span class="text-secondary" id="vwap">vwap</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="marq"><span id="orig"> </span></div>
+        <!-- Fin Barra Informacion -->
+    
+    <hr class="w-100 clearfix d-md-none" />
     <!-- Fin Filtros -->
 
     <!-- Graficos -->
@@ -169,6 +177,7 @@
     <script src="node_modules/axios/dist/axios.min.js"></script>
     <script src="node_modules/chart.js/dist/chart.min.js"></script>
     <script type="module" src="./asset/js/main.js"></script>
+    <script type="module" src="./asset/js/banner.js"></script>
 </body>
 
 </html>
